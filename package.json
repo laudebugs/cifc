@@ -1,0 +1,23 @@
+{
+  "name": "cifc",
+  "version": "1.0.0",
+  "description": "NYU CIFC APIs and Functions",
+  "main": "src/index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/laudebugs/cifc.git"
+  },
+  "keywords": [
+    "cifc",
+    "nyu"
+  ],
+  "author": "laudebugs",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/laudebugs/cifc/issues"
+  },
+  "homepage": "https://github.com/laudebugs/cifc#readme"
+}
