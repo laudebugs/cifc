@@ -1,23 +1,41 @@
 {
-  "name": "cifc",
-  "version": "1.0.0",
-  "description": "NYU CIFC APIs and Functions",
-  "main": "src/index.ts",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/laudebugs/cifc.git"
-  },
-  "keywords": [
-    "cifc",
-    "nyu"
-  ],
-  "author": "laudebugs",
-  "license": "GPL-3.0",
-  "bugs": {
-    "url": "https://github.com/laudebugs/cifc/issues"
-  },
-  "homepage": "https://github.com/laudebugs/cifc#readme"
+    "name": "cifc",
+    "version": "1.0.0",
+    "description": "NYU CIFC APIs and Functions",
+    "main": "src/index.ts",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/laudebugs/cifc.git"
+    },
+    "keywords": [
+        "cifc",
+        "nyu"
+    ],
+    "author": "laudebugs",
+    "license": "GPL-3.0",
+    "bugs": {
+        "url": "https://github.com/laudebugs/cifc/issues"
+    },
+    "homepage": "https://github.com/laudebugs/cifc#readme",
+    "devDependencies": {
+        "@types/google-spreadsheet": "^3.3.0",
+        "@typescript-eslint/eslint-plugin": "^5.33.1",
+        "@typescript-eslint/parser": "^5.33.1",
+        "eslint": "^8.22.0",
+        "husky": "^8.0.1",
+        "prettier": "^2.7.1",
+        "pretty-quick": "^3.1.3",
+        "typescript": "^4.7.4"
+    },
+    "dependencies": {
+        "google-spreadsheet": "^3.3.0"
+    },
+    "husky": {
+        "hooks": {
+            "prepare-commit-msg": "exec < /dev/tty && git cz --hook || true"
+        }
+    }
 }
