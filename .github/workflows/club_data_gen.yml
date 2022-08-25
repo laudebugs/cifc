@@ -27,6 +27,9 @@ jobs:
             - name: Build
               run: npm run build
             - name: Generate Club Data
+              env:
+                  GOOGLE_API_KEY: ${{secret.GOOGLE_API_KEY}}
+                  CLUBS_AT_NYU_GOOGLE_SHEETS_ID: ${{secret.CLUBS_AT_NYU_GOOGLE_SHEETS_ID}}
               run: |
                   mkdir out
                   mkdir out/covers
