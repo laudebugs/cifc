@@ -32,8 +32,8 @@ jobs:
                   mkdir out/covers
                   npm run generate-club-data
               env:
-                  GOOGLE_API_KEY: ${{secret.GOOGLE_API_KEY}}
-                  CLUBS_AT_NYU_GOOGLE_SHEETS_ID: ${{secret.CLUBS_AT_NYU_GOOGLE_SHEETS_ID}}
+                  GOOGLE_API_KEY: ${{secrets.GOOGLE_API_KEY}}
+                  CLUBS_AT_NYU_GOOGLE_SHEETS_ID: ${{secrets.CLUBS_AT_NYU_GOOGLE_SHEETS_ID}}
             - name: 'Release 💾'
               uses: s0/git-publish-subdir-action@develop
               env:
