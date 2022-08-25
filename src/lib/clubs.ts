@@ -1,4 +1,5 @@
 import { GoogleSpreadsheet } from 'google-spreadsheet'
+import slug from 'slug'
 
 const GOOGLE_API_KEY = process.env.GOOGLE_API_KEY
 
@@ -14,12 +15,15 @@ export async function loadNYUClubsSpreadsheet() {
 
     const clubData = await doc.sheetsByIndex[0].getRows()
     const headerValues = await doc.sheetsByIndex[0].headerValues
-    const clubs = clubData.map(({ _rawData }) => {
-        const club = {}
-        headerValues.forEach((header, index) => {
-            club[header] = _rawData[index]
+
+    return clubData
+        .map(({ _rawData }) => {
+            const club = {}
+            headerValues.forEach((header, index) => {
+                club[header] = _rawData[index]
+            })
+            return club
+            // Add the club image to the data
         })
-        return club
-    })
-    return clubs
+        .map((club) => ({ ...club, cover: `${slug(club['Name'])}.jpeg` }))
 }

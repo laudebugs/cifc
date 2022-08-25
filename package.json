@@ -2,13 +2,13 @@
     "name": "cifc",
     "version": "1.0.0",
     "description": "NYU CIFC APIs and Functions",
-    "main": "src/index.ts",
+    "main": "src/generate-club-data.ts",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
         "build": "tsc",
         "start": "node dist/index.js",
         "dev": "concurrently \"tsc -w\" \"nodemon dist/index.js\"",
-        "generate-club-data": "ts-node src/generate.ts"
+        "generate-club-data": "node dist/generate-club-data.js"
     },
     "repository": {
         "type": "git",
@@ -26,6 +26,7 @@
     "homepage": "https://github.com/laudebugs/cifc#readme",
     "devDependencies": {
         "@types/google-spreadsheet": "^3.3.0",
+        "@types/sharp": "^0.30.5",
         "@typescript-eslint/eslint-plugin": "^5.33.1",
         "@typescript-eslint/parser": "^5.33.1",
         "concurrently": "^7.3.0",
@@ -37,10 +38,13 @@
         "typescript": "^4.7.4"
     },
     "dependencies": {
+        "@types/slug": "^5.0.3",
         "dotenv": "^16.0.1",
         "google-spreadsheet": "^3.3.0",
         "node-html-parser": "^5.4.2-0",
-        "puppeteer": "^16.2.0"
+        "puppeteer": "^16.2.0",
+        "sharp": "^0.30.7",
+        "slug": "^6.0.0"
     },
     "husky": {
         "hooks": {

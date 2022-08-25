@@ -27,4 +27,14 @@ jobs:
             - name: Build
               run: npm run build
             - name: Generate Club Data
-              run: npm run generate-club-data
+              run: |
+                  mkdir out
+                  mkdir out/covers
+                  npm run generate-club-data
+            - name: 'Release 💾'
+              uses: s0/git-publish-subdir-action@develop
+              env:
+                  REPO: self
+                  BRANCH: release
+                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+                  FOLDER: out
