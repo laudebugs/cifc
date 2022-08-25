@@ -1,0 +1,30 @@
+name: Generate Club Data
+on:
+    push:
+        branches:
+            - main
+jobs:
+    generate_club_data:
+        name: Update
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v2
+              with:
+                  fetch-depth: 0
+            - name: Cache Dependencies
+              uses: actions/cache@v2
+              env:
+                  cache-name: node-cache
+              with:
+                  path: ~/.npm
+                  key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
+                  restore-keys: |
+                      ${{ runner.os }}-build-${{ env.cache-name }}-
+                      ${{ runner.os }}-build-
+                      ${{ runner.os }}-
+            - name: Install Dependencies
+              run: npm install
+            - name: Build
+              run: npm run build
+            - name: Generate Club Data
+              run: npm run generate-club-data
