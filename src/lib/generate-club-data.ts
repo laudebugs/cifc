@@ -1,11 +1,11 @@
 import { GoogleSpreadsheet } from 'google-spreadsheet'
 import slug from 'slug'
-
+import { existsSync } from 'fs'
 const GOOGLE_API_KEY = process.env.GOOGLE_API_KEY
 
 const SPREADSHEET_ID = process.env.CLUBS_AT_NYU_GOOGLE_SHEETS_ID
 
-export async function loadNYUClubsSpreadsheet() {
+export async function generateClubData() {
     if (!SPREADSHEET_ID) throw new Error('SPREADSHEET_ID not set')
     if (!GOOGLE_API_KEY) throw new Error('GOOGLE_API_KEY not set')
 
@@ -25,5 +25,13 @@ export async function loadNYUClubsSpreadsheet() {
             return club
             // Add the club image to the data
         })
-        .map((club) => ({ ...club, cover: `${slug(club['Name'])}.jpeg` }))
+        .map((club) => {
+            let clubCover = slug(`${club['Name']}`)
+            // Check if file exists
+            if (!existsSync(`out/covers/${clubCover}.jpeg`)) {
+                club['cover'] = '_default.jpeg'
+            } else club['cover'] = `${slug(club['Name'])}.jpeg`
+
+            return club
+        })
 }
