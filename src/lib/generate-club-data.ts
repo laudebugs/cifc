@@ -29,7 +29,7 @@ export async function generateClubData() {
             let clubCover = slug(`${club['Name']}`)
             // Check if file exists
             if (!existsSync(`out/covers/${clubCover}.jpeg`)) {
-                club['cover'] = '_default.jpeg'
+                club['cover'] = 'default.jpeg'
             } else club['cover'] = `${slug(club['Name'])}.jpeg`
 
             return club
