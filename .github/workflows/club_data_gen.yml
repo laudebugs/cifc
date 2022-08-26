@@ -3,6 +3,12 @@ on:
     push:
         branches:
             - main
+    workflow_dispatch:
+
+concurrency:
+    group: ${{ github.workflow }}-${{ github.ref }}
+    cancel-in-progress: true
+
 jobs:
     generate_club_data:
         name: Update
@@ -31,6 +37,7 @@ jobs:
                   mkdir out
                   mkdir out/covers
                   npm run generate-club-data
+                  npx prettier --write out
               env:
                   GOOGLE_API_KEY: ${{secrets.GOOGLE_API_KEY}}
                   CLUBS_AT_NYU_GOOGLE_SHEETS_ID: ${{secrets.CLUBS_AT_NYU_GOOGLE_SHEETS_ID}}
