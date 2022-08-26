@@ -6,7 +6,7 @@
 
 > As seen [here](https://www.nyucifc.org/christian-clubs-at-nyu)
 
-<img src="./public/clubs_sample.png" width="500" height="auto">
+<img src="./public/clubs_sample.png" width="800" height="auto">
 
 **[Check out a sample here!](https://laudebugs.github.io/cifc/)**
 
