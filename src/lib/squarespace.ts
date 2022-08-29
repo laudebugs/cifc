@@ -9,6 +9,7 @@ export const generateSquareSpaceScript = () => {
 <link rel="preconnect" href="https://fonts.gstatic.com" />
 <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="https://use.typekit.net/pdj0dfw.css">
+<link rel="stylesheet" href="https://laudebugs.github.io/cifc/style.css" />
 <script data-cfasync="false" data-tockify-script="embed" src="https://public.tockify.com/browser/embed.js"></script>
 
 <!--
