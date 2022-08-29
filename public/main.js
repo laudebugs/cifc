@@ -61,7 +61,7 @@ $(document).ready(function () {
                         <img class="icon" src="https://raw.githubusercontent.com/lbugasu/cifcapps/master/images/link_icon.png"/>
                       </a>`
                     } else {
-                        return `<span></span>`
+                        return ``
                     }
                 }
 
@@ -75,7 +75,7 @@ $(document).ready(function () {
                       <img class="icon"/ src= "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Facebook_circle_pictogram.svg/1200px-Facebook_circle_pictogram.svg.png">
                     </a>`
                     } else {
-                        return `<span></span>`
+                        return ``
                     }
                 }
 
@@ -109,18 +109,24 @@ $(document).ready(function () {
                           club['cover']
                       }); height: 175px">
                     </div>
-                    <p class="clubDescription">${club['Description']}</p>
-                    <h4>Meeting Time & Location:</h4>
-                    <p class="meetingPlace"><b>Time:</b> ${club['Weekly Meeting Timee'] ? club['Weekly Meeting Time'] : 'N/A'}</p>
-                    <p class="meetingPlace"><b>Location:</b> ${club['Meeting Place'] ? club['Meeting Place'] : 'N/A'}</p>
+                    <span class="clubMetaData">
+                        <p class="clubDescription">${club['Description']}</p>
+                        <h4>Weekly Meeting Time & Location:</h4>
+                        <p class="meetingPlace"><b class="meetingTitle">Time:</b> ${
+                            club['Weekly Meeting Timee'] ? club['Weekly Meeting Time'] : 'N/A'
+                        }</p>
+                        <p class="meetingPlace"><b class="meetingTitle">Location:</b> ${
+                            club['Meeting Place'] ? club['Meeting Place'] : 'N/A'
+                        }</p>
 
-                    <h4>Contact:</h4>
-                    <p class="contactPerson">${
-                        club['Main Contact Person'] ? club['Main Contact Person'] : 'N/A'
-                    }<br/><a href="mailto:${club['Email']}">${club['Email']} ✉ </a></p>
-                    <div class="links">
-                    ${checkFB()}
-                    ${checkWebsite()}
+                        <h4>Contact:</h4>
+                        <p class="contactPerson">${
+                            club['Main Contact Person'] ? club['Main Contact Person'] : 'N/A'
+                        }<br/><a class="email" href="mailto:${club['Email']}">${club['Email']} ✉ </a></p>
+                        <div class="links">
+                        ${checkFB()}
+                        ${checkWebsite()}
+                    </span>
                 </div>`
                 clubsDiv.appendChild(ele)
             })
