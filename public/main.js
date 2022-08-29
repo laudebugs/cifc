@@ -121,8 +121,16 @@ $(document).ready(function () {
 
                         <h4>Contact:</h4>
                         <p class="contactPerson">${
-                            club['Main Contact Person'] ? club['Main Contact Person'] : 'N/A'
-                        }<br/><a class="email" href="mailto:${club['Email']}">${club['Email']} ✉ </a></p>
+                            club['Main Contact Person']
+                                ? club['Main Contact Person'].split('\n').map((contact, i) => `${i > 0 ? '<br>' : ''}${contact}`)
+                                : 'N/A'
+                        }<br/>${
+                    club['Email'] &&
+                    club['Email']
+                        .split('\n')
+                        .map((email) => `<a class="email" href="mailto:${email}">${email} ✉ </a>`)
+                        .join('\n')
+                }</p>
                         <div class="links">
                         ${checkFB()}
                         ${checkWebsite()}
