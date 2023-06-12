@@ -29,7 +29,7 @@
         "@types/sharp": "^0.31.0",
         "@typescript-eslint/eslint-plugin": "^5.33.1",
         "@typescript-eslint/parser": "^5.33.1",
-        "concurrently": "^7.3.0",
+        "concurrently": "^8.0.0",
         "eslint": "^8.22.0",
         "husky": "^8.0.1",
         "nodemon": "^2.0.19",
