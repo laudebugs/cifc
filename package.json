@@ -44,7 +44,7 @@
         "node-html-parser": "^6.0.0",
         "puppeteer": "^16.2.0",
         "sharp": "^0.32.0",
-        "slug": "^6.0.0"
+        "slug": "^8.0.0"
     },
     "husky": {
         "hooks": {
