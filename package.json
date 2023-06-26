@@ -40,7 +40,7 @@
     "dependencies": {
         "@types/slug": "^5.0.3",
         "dotenv": "^16.0.1",
-        "google-spreadsheet": "^3.3.0",
+        "google-spreadsheet": "^4.0.0",
         "node-html-parser": "^6.0.0",
         "puppeteer": "^16.2.0",
         "sharp": "^0.32.0",
